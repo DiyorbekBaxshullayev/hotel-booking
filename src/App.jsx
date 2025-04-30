@@ -1,12 +1,11 @@
-import React from "react";
-import heroImage from "./assets/hero-bg.jpg"; // E'tibor bering: yo‘l to‘g‘ri bo‘lishi shart
+import Landing from './pages/Landing'
 
-const App = () => {
+function App() {
   return (
-    <div className="h-screen flex items-center justify-center bg-gray-100">
-      <img src={heroImage} alt="Hero Background" className="max-w-full max-h-full" />
+    <div className="App">
+      <Landing />
     </div>
   );
-};
+}
 
 export default App;
