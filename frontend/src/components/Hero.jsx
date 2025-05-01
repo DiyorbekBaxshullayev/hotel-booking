@@ -1,8 +1,20 @@
 import React from "react";
 import { Player } from "@lottiefiles/react-lottie-player";
 import heroAnimation from "../assets/hero-animation.json";
+import { useNavigate } from "react-router-dom"; // React Router uchun
 
 const Hero = () => {
+  const navigate = useNavigate(); // Routing uchun hook
+
+  // Kirish va Ro‘yxatdan o‘tish sahifalariga yo‘naltirish funksiyalari
+  const goToLogin = () => {
+    navigate("/login");
+  };
+
+  const goToRegister = () => {
+    navigate("/register");
+  };
+
   return (
     <section className="relative w-full min-h-screen overflow-hidden">
       {/* Background Image */}
@@ -31,6 +43,22 @@ const Hero = () => {
           src={heroAnimation}
           style={{ height: "300px", width: "300px" }}
         />
+
+        {/* Buttons */}
+        <div className="mt-8 space-x-4">
+          <button
+            onClick={goToLogin}
+            className="px-6 py-3 text-lg bg-blue-600 text-white rounded-lg shadow-lg hover:bg-blue-700 focus:outline-none transition-all duration-300"
+          >
+            Login
+          </button>
+          <button
+            onClick={goToRegister}
+            className="px-6 py-3 text-lg bg-yellow-400 text-white rounded-lg shadow-lg hover:bg-yellow-500 focus:outline-none transition-all duration-300"
+          >
+            Register
+          </button>
+        </div>
       </div>
     </section>
   );
